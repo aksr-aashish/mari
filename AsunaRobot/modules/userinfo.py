@@ -321,7 +321,7 @@ def info(update: Update, context: CallbackContext):
         text += f"\n\n This user is my hubby *Aaru*."
         
     if disaster_level_present:
-        text += ' [<a href="https://t.me/komiinfo/2">?</a>]'.format(
+        text += ' [<a href="">?</a>]'.format(
             bot.username
         )
 
