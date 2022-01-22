@@ -1,0 +1,23 @@
+import os
+import random
+import glob
+from PIL import Image, ImageDraw, ImageFont
+from telethon.tl.types import InputMessagesFilterPhotos
+from AsunaRobot.events import register
+from AsunaRobot import telethn as tbot
+
+@run_async
+def dare(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(random.choice(pics)
+
+    
+        pics = []
+        async for i in tbot.iter_messages(
+            "@komimemes", filter=InputMessagesFilterPhotos
+        ):
+            
+        pics = []
+        async for i in tbot.iter_messages(
+            "@komimemes", filter=InputMessagesFilterPhotos
+        ):
+        
