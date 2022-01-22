@@ -92,8 +92,8 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="support", url="https://t.me/komiXsupport"),
-        InlineKeyboardButton(text="Get Help", url=f"https://t.me/komiXrobot?start=help"),
+        InlineKeyboardButton(text="support", url="https://t.me/marinxsupport"),
+        InlineKeyboardButton(text="Get Help", url=f"https://t.me/Marinxrobot?start=help"),
     ],
     [
         InlineKeyboardButton(
@@ -243,7 +243,7 @@ def start(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="「UPDATES」",
-                            url="https://telegram.dog/komisanupdates",
+                            url="https://telegram.dog/marinxupdates",
                         ),
                         InlineKeyboardButton(
                           text="「HELP」", url=f"https://t.me/marinxrobot?start=help"
