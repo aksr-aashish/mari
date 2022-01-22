@@ -93,9 +93,7 @@ async def set_chat_description(_, message):
             return
         new_description = message.text.split(None, 1)[1]
         await message.chat.set_description(new_description)
-        await message.reply_text(
-            f"Successfully Changed Group Description."
-        )
+        await message.reply_text('Successfully Changed Group Description.')
     except Exception as e:
         print(e)
         await message.reply_text(e)

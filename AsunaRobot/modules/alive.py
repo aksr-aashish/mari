@@ -15,8 +15,8 @@ PHOTO = "https://te.legra.ph/file/ec23777561fa6d797d72e.mp4"
 @register(pattern=("/alive"))
 async def awake(event):
   TEXT = f"**Hi [{event.sender.first_name}](tg://user?id={event.sender.id}), I'm shouko komi 『ZΞ℞Ø』.** \n\n"
-  TEXT += f"**I'm Working Properly** \n\n"
-  TEXT += f"**My Master : [Blank Sama](https://t.me/girls_lob)** \n\n"
+  TEXT += "**I'm Working Properly** \n\n"
+  TEXT += '**My Master : [Blank Sama](https://t.me/girls_lob)** \n\n'
   TEXT += f"**Library Version :** `{telever}` \n"
   TEXT += f"**Telethon Version :** `{tlhver}` \n"
   TEXT += f"**Pyrogram Version :** `{pyrover}`\n"
