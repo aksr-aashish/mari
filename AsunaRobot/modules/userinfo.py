@@ -318,7 +318,7 @@ def info(update: Update, context: CallbackContext):
         text += f"\n\nThis user is my *Raider Alt *."
         disaster_level_present = True
     elif user.id == 5080959129:
-        text += f"\n\n This user is my hubby *Aaru*."
+        text += f"\n\n This user is my Owner *Sinixious*."
         
     if disaster_level_present:
         text += ' [<a href="">?</a>]'.format(
@@ -359,9 +359,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/komiinfo/3"),
+                                "Health", url="https://t.me/marinupdates"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/komiinfo/2"),
+                                "Disaster", url="https://t.me/marinupdates"),
                             InlineKeyboardButton(
                                 "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
@@ -379,9 +379,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/komiinfo/3"),
+                                "Health", url="https://t.me/marinupdates"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/komiinfo/2"),
+                                "Disaster", url="https://t.me/marinupdates"),
                             InlineKeyboardButton(
                                 "User", url=f"https://t.me/{html.escape(user.username)}")
                         ],
@@ -459,7 +459,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @support_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>『✨komi analytics』:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>『⚔️Marin analytics』:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML,disable_web_page_preview=True)
 
@@ -516,7 +516,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust Heroes Association to set my bio."
+                "Erm... yeah, I only trust Akatsuki community to set my bio."
             )
             return
 
