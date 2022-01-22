@@ -1,4 +1,4 @@
-[In reply to Sɪɴxɪᴏᴜs]
+
 from math import ceil
 from typing import Dict, List
 
