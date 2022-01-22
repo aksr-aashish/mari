@@ -97,7 +97,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text=" Add Komi To Your Group ", url="t.me/komixRobot?startgroup=new"),
+            text=" Add Marin To Your Group ", url="t.me/Marinxrobot?startgroup=new"),
     ],
 ]
 
@@ -105,12 +105,12 @@ buttons = [
 HELP_STRINGS = """
 *{} ᴄᴏᴍᴇs ᴡɪᴛʜ:*\n*ᴀɪ ᴄʜᴀᴛʙᴏᴛ*, *ᴀɴɪᴍᴇ*, *ᴍᴜsɪᴄ*, *ɴᴏᴛᴇs*, *ғɪʟᴛᴇʀs*, *ɴsғᴡ* *ᴀɴᴅ ᴍᴏʀᴇ!*\n• *ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ᴇɪᴛʜᴇʀ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ* `/` *ᴏʀ* `!`\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/komiXsupport) """
 
-HELP_IMG = "https://te.legra.ph/file/5c54e1ffe891e1749403b.jpg"
+HELP_IMG = "https://telegra.ph/file/c34780cea5ee4b1764a8f.jpg"
 
-KOMISTART ="https://te.legra.ph/file/12dac874dc3fbd9dc3f09.mp4"
+KOMISTART ="https://telegra.ph/file/c34780cea5ee4b1764a8f.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @excrybaby \
+ You can support the project by contacting @sinixious \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -229,7 +229,7 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
-           KOMISTART, caption= "<b>Hello {}, I am komi!. I wanna make as many as friends possible\n will you be my friend ? \nHaven't sleep since</b>: <code>{}</code>".format(
+           KOMISTART, caption= "<b>Hello {}, I am Marin!. I wanna make as many as friends possible\n will you be my friend ? \nHaven't sleep since</b>: <code>{}</code>".format(
                 escape_markdown(first_name),
                 uptime
             ),
@@ -246,7 +246,7 @@ def start(update: Update, context: CallbackContext):
                             url="https://telegram.dog/komisanupdates",
                         ),
                         InlineKeyboardButton(
-                          text="「HELP」", url=f"https://t.me/komiXrobot?start=help"
+                          text="「HELP」", url=f"https://t.me/marinxrobot?start=help"
                         ),  
                     ]
                 ]
@@ -651,7 +651,7 @@ def main():
             
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                " I am back online[✨](https://te.legra.ph/file/ec23777561fa6d797d72e.mp4)",
+                " I am back online[✨](https://telegra.ph/file/0adbb31a3fff0f4252111.jpg)",
                 
                 parse_mode=ParseMode.MARKDOWN
             )
