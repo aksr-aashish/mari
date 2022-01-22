@@ -300,25 +300,25 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += f"\n\nThis user is my *Darling*."
+        text += f"\n\nThis user is my *Owner*."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += f"\n\nThis user is my *Onichan*."
+        text += f"\n\nThis user is my *officer*."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += f"\n\nThis user is my *Sensei*."
+        text += f"\n\nThis user is my *Officer Alt*."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text +=f"\n\nThis user is my *Senpai*."
+        text +=f"\n\nThis user is my *Raider*."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += f"\n\nThis user is my *Bestfrnd*."
+        text += f"\n\nThis user is my *Raider Initiate*."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += f"\n\nThis user is my *frnd*."
+        text += f"\n\nThis user is my *Raider Alt *."
         disaster_level_present = True
     elif user.id == 5080959129:
-        text += f"\n\n This user is my hubby *ARNAB*."
+        text += f"\n\n This user is my hubby *Aaru*."
         
     if disaster_level_present:
         text += ' [<a href="https://t.me/komiinfo/2">?</a>]'.format(
