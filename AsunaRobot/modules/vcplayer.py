@@ -1,10 +1,10 @@
 __mod_name__ = "「VCPLAYER」"
 __help__ = """
-          》Komi Vc player《
-            
+          ≠ Marin Vc player ≠
+           
 I can now also play music in your group's voice chat
  
-Assistant username:- @komivcassisant
+Assistant username:- @sinixious
  
 **Setting up**
 1) Make bot admin (Group and in channel if use cplay)
@@ -51,12 +51,12 @@ channel is also can be used instead of c ( /cplay = /channelplay )
 1) Get your channel ID.
 2) Create a group with tittle: Channel Music: your_channel_id
 3) Add bot as Channel admin with full perms
-4) Add @komivcassisant to the channel as an admin.
+4) Add @sinixious to the channel as an admin.
 5) Simply send commands in your group.
 **=>> More tools 🧑‍🔧**
 - /musicplayer [on/off]: Enable/Disable Music player
 - /admincache: Updates admin info of your group. Try if bot isn't recognize admin
-- /userbotjoin: Invites @komivcassisant Userbot to your chat
+- /userbotjoin: Invites @sinixious Userbot to your chat
 **=>> Commands for Sudo Users ⚔️**
  - /userbotleaveall - remove assistant from all chats
  - /gcast <reply to message> - globally brodcast replied message to all chats
