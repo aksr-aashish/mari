@@ -45,9 +45,7 @@ async def send(event):
 async def install(event):
     if event.fwd_from:
         return
-    if event.sender_id == OWNER_ID:
-        pass
-    else:
+    if event.sender_id != OWNER_ID:
         return
     if event.reply_to_msg_id:
         try:

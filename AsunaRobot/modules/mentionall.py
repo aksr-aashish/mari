@@ -35,7 +35,7 @@ async def mentionall(event):
     return await event.respond("__Give me one argument!__")
   else:
     return await event.respond("__Reply to a message or give me some text to mention others!__")
-  
+
   if mode == "text_on_cmd":
     usrnum = 0
     usrtxt = ""
@@ -60,12 +60,12 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-        
+
   spam_chats.append(chat_id)
   usrnum = 0
   usrtxt = ""
   async for usr in telethn.iter_participants(chat_id):
-    if not chat_id in spam_chats:
+    if chat_id not in spam_chats:
       break
     usrnum += 1
     usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
@@ -85,13 +85,12 @@ async def mentionall(event):
 
 @telethn.on(events.NewMessage(pattern="^/cancel$"))
 async def cancel_spam(event):
-  if not event.chat_id in spam_chats:
+  if event.chat_id not in spam_chats:
     return await event.respond('__There is no proccess on going...__')
-  else:
-    try:
-      spam_chats.remove(event.chat_id)
-    except:
-      pass
-    return await event.respond('__Stopped.__')
+  try:
+    spam_chats.remove(event.chat_id)
+  except:
+    pass
+  return await event.respond('__Stopped.__')
         
 __mod_name__ = "Mention All"

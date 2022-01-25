@@ -93,13 +93,18 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(text="support", url="https://t.me/marinxsupport"),
-        InlineKeyboardButton(text="Get Help", url=f"https://t.me/Marinxrobot?start=help"),
+        InlineKeyboardButton(
+            text="Get Help", url='https://t.me/Marinxrobot?start=help'
+        ),
     ],
     [
         InlineKeyboardButton(
-            text=" Add Marin To Your Group ", url="t.me/Marinxrobot?startgroup=new"),
+            text=" Add Marin To Your Group ",
+            url="t.me/Marinxrobot?startgroup=new",
+        ),
     ],
 ]
+
 
 
 HELP_STRINGS = """
@@ -229,9 +234,9 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_video(
-           KOMISTART, caption= "<b>Hello {}, I am Marin!. I wanna make as many as friends possible\n will you be my friend ? \nHaven't sleep since</b>: <code>{}</code>".format(
-                escape_markdown(first_name),
-                uptime
+            KOMISTART,
+            caption="<b>Hello {}, I am Marin!. I wanna make as many as friends possible\n will you be my friend ? \nHaven't sleep since</b>: <code>{}</code>".format(
+                escape_markdown(first_name), uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
@@ -246,8 +251,9 @@ def start(update: Update, context: CallbackContext):
                             url="https://telegram.dog/marinxupdates",
                         ),
                         InlineKeyboardButton(
-                          text="「HELP」", url=f"https://t.me/marinxrobot?start=help"
-                        ),  
+                            text="「HELP」",
+                            url='https://t.me/marinxrobot?start=help',
+                        ),
                     ]
                 ]
             ),
@@ -457,25 +463,24 @@ def send_settings(chat_id, user_id, user=False):
                 parse_mode=ParseMode.MARKDOWN,
             )
 
+    elif CHAT_SETTINGS:
+        chat_name = dispatcher.bot.getChat(chat_id).title
+        dispatcher.bot.send_message(
+            user_id,
+            text="Which module would you like to check {}'s settings for?".format(
+                chat_name
+            ),
+            reply_markup=InlineKeyboardMarkup(
+                paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
+            ),
+        )
     else:
-        if CHAT_SETTINGS:
-            chat_name = dispatcher.bot.getChat(chat_id).title
-            dispatcher.bot.send_message(
-                user_id,
-                text="Which module would you like to check {}'s settings for?".format(
-                    chat_name
-                ),
-                reply_markup=InlineKeyboardMarkup(
-                    paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
-                ),
-            )
-        else:
-            dispatcher.bot.send_message(
-                user_id,
-                "Seems like there aren't any chat settings available :'(\nSend this "
-                "in a group chat you're admin in to find its current settings!",
-                parse_mode=ParseMode.MARKDOWN,
-            )
+        dispatcher.bot.send_message(
+            user_id,
+            "Seems like there aren't any chat settings available :'(\nSend this "
+            "in a group chat you're admin in to find its current settings!",
+            parse_mode=ParseMode.MARKDOWN,
+        )
 
 
 def settings_button(update: Update, context: CallbackContext):
@@ -567,29 +572,28 @@ def get_settings(update: Update, context: CallbackContext):
     msg = update.effective_message  # type: Optional[Message]
 
     # ONLY send settings in PM
-    if chat.type != chat.PRIVATE:
-        if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
-            msg.reply_text(
-                text,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="Settings",
-                                url="t.me/{}?start=stngs_{}".format(
-                                    context.bot.username, chat.id
-                                ),
-                            )
-                        ]
-                    ]
-                ),
-            )
-        else:
-            text = "Click here to check your settings."
-
-    else:
+    if chat.type == chat.PRIVATE:
         send_settings(chat.id, user.id, True)
+
+    elif is_user_admin(chat, user.id):
+        text = "Click here to get this chat's settings, as well as yours."
+        msg.reply_text(
+            text,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="Settings",
+                            url="t.me/{}?start=stngs_{}".format(
+                                context.bot.username, chat.id
+                            ),
+                        )
+                    ]
+                ]
+            ),
+        )
+    else:
+        text = "Click here to check your settings."
 
 
 def donate(update: Update, context: CallbackContext):
