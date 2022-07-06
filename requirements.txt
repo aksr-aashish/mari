@@ -1,6 +1,6 @@
 future
 emoji
-lxml==4.6.5
+lxml==4.9.1
 wget
 gtts
 beautifulsoup4
